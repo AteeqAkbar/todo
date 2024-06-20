@@ -1,9 +1,11 @@
 import "./App.css";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { ListTasks } from "./pages/listTasks";
-import CreateTask from "./pages/createTask";
+import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
+import Events from "./pages/Events";
 import Header from "./components/header";
-import { BlukDelete } from "./pages/blukDelete";
+import Home from "./pages/Home";
 
 function App() {
   return (
@@ -11,11 +13,12 @@ function App() {
       <Header />
 
       <Routes>
-        <Route path="/" element={<Navigate to="/list-tasks" />} />
-        <Route path="/list-tasks" element={<ListTasks />} />
+        <Route path="/" element={<Home />} />
+        {/* <Route path="/list-tasks" element={<ListTasks />} /> */}
 
-        <Route path="/create-task" element={<CreateTask />} />
-        <Route path="/bulk-delete" element={<BlukDelete />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/events" element={<Events />} />
       </Routes>
     </>
   );
